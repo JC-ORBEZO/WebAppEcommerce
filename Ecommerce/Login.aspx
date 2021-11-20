@@ -1,0 +1,16 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Ecommerce.Login" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h1>Login</h1>
+    <div class="formAcceso">
+        <asp:Label Text="Usuario" runat="server" /><br />
+        <asp:TextBox runat="server" /><br />
+        <asp:Label Text="Password" runat="server" /><br />
+        <asp:TextBox runat="server" /><br />
+        <asp:Button Text="Enviar" runat="server" />
+    </div>
+    <div class="formRegistro">
+        <h2></h2>
+    </div>
+</asp:Content>

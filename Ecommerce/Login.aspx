@@ -9,8 +9,5 @@
         <asp:Label Text="Password" runat="server" /><br />
         <asp:TextBox ID="Password" runat="server" /><br />
         <asp:Button ID="Enviar" Text="Enviar" OnClick="Enviar_Click" runat="server" />
-    </div>
-    <div class="formRegistro">
-        <h2></h2>
-    </div>
+    </div>    
 </asp:Content>

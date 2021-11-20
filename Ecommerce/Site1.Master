@@ -12,9 +12,9 @@
 <body>
     <form id="form1" runat="server">
         <a href="Login.aspx">Login.aspx</a>
+        <a href="Registro.aspx">Registro.aspx</a>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                <a href="Login.aspx">Login.aspx</a>
             </asp:ContentPlaceHolder>
         </div>
     </form>

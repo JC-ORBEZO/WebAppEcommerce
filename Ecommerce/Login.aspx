@@ -10,4 +10,5 @@
         <asp:TextBox ID="Password" runat="server" /><br />
         <asp:Button ID="Enviar" Text="Enviar" OnClick="Enviar_Click" runat="server" />
     </div>    
+    <span id="Mensaje" runat="server"></span>
 </asp:Content>

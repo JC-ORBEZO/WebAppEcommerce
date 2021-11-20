@@ -5,10 +5,10 @@
     <h1>Login</h1>
     <div class="formAcceso">
         <asp:Label Text="Usuario" runat="server" /><br />
-        <asp:TextBox runat="server" /><br />
+        <asp:TextBox ID="Usuario" runat="server" /><br />
         <asp:Label Text="Password" runat="server" /><br />
-        <asp:TextBox runat="server" /><br />
-        <asp:Button Text="Enviar" runat="server" />
+        <asp:TextBox ID="Password" runat="server" /><br />
+        <asp:Button ID="Enviar" Text="Enviar" OnClick="Enviar_Click" runat="server" />
     </div>
     <div class="formRegistro">
         <h2></h2>

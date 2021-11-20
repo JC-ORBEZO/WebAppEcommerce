@@ -13,5 +13,11 @@ namespace Ecommerce
         {
 
         }
+
+        protected void Enviar_Click(object sender, EventArgs e)
+        {
+            Usuario.Text = "Usuario pa";
+            Password.Text = "Claaave";
+        }
     }
 }

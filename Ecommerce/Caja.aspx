@@ -20,4 +20,5 @@
                 <h2>CARRITO VACÍO</h2>
             <%}
             %>
+    <asp:Button Text="Comprar" ID="Comprar" OnClick="Comprar_Click" runat="server" />
 </asp:Content>

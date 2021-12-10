@@ -14,10 +14,9 @@ namespace Ecommerce
         public string usuario;
         public string password;
         public List<Articulo> receptor { get; set; }
-        //public Articulo Otroreceptor { get; set; }
+        public Venta nuevaVenta = new Venta();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Otroreceptor= (Articulo)Session["carritoCompra"];
             receptor = (List<Articulo>)Session["carritoCompra"];
             receptor = (List<Articulo>)Session["carritoCompra"];
             Session.Add("carritoCompra", receptor);
@@ -30,7 +29,14 @@ namespace Ecommerce
                 {
                     Contenedor3.InnerText = usuario;
                 }
-            }            
+            }
+        }
+
+        protected void Comprar_Click(object sender, EventArgs e)
+        {
+            //nuevaVenta.codigo = 5; => AUTONUMERICO
+            //nuevaVenta.dni = Session[password].ToString();
+            nuevaVenta.precio = 156;
         }
     }
 }

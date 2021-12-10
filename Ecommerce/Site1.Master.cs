@@ -9,9 +9,18 @@ namespace Ecommerce
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
+        public string usuar;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            // RECEPCIÓN Y MUESTRA DEL NOMBRE DE USUARIO => DESDE LOGIN
+            if (Session["usuario"] != null)
+            {
+                usuar = Session["usuario"].ToString();
+                if (usuar != null)
+                {
+                    Contenedor4.InnerText = "Bienvenido "+usuar;
+                }
+            }            
         }
     }
 }

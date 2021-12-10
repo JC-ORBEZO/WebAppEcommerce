@@ -11,8 +11,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <a href="Login.aspx">Login.aspx</a>
-        <a href="Registro.aspx">Registro.aspx</a>
+        <a href="Articulos.aspx">ARTICULOS</a>
+        <a href="Caja.aspx">CARRITO</a>
+        <a href="Acceso.aspx">LOGIN</a>
+        <span id="Contenedor4" runat="server"></span>
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>

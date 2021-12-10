@@ -2,17 +2,23 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Registro</h1>
+    <h1>PÁGINA DE REGISTRO</h1>
     <div class="formRegistro">
-        <asp:TextBox ID="Dni" runat="server" placeholder="DNI"/><br />
-        <asp:TextBox ID="Nombre" runat="server" placeholder="Nombre"/><br />
-        <asp:TextBox ID="Apellido" runat="server" placeholder="Apellido"/><br />
-        <asp:TextBox ID="Telefono" runat="server" placeholder="Telefono"/><br />
-        <asp:TextBox ID="Correo" runat="server" placeholder="Correo"/><br />
-        <asp:TextBox ID="Direccion" runat="server" placeholder="Direccion"/><br />
-        <asp:TextBox ID="Password1" runat="server" placeholder="Password1"/><br />
-        <asp:TextBox ID="Password2" runat="server"  placeholder="Password2" /><br />
+        <asp:Label Text="Dni" runat="server" /><br />
+        <asp:TextBox ID="Dni" runat="server" /><br />
+        <asp:Label Text="Nombre" runat="server" /><br />
+        <asp:TextBox ID="Nombre" runat="server" /><br />
+        <asp:Label Text="Apellido" runat="server" /><br />
+        <asp:TextBox ID="Apellido" runat="server" /><br />
+        <asp:Label Text="Telefono" runat="server" /><br />
+        <asp:TextBox ID="Telefono" runat="server" /><br />
+        <asp:Label Text="Direccion" runat="server" /><br />
+        <asp:TextBox ID="Direccion" runat="server" /><br />
+        <asp:Label Text="Email" runat="server" /><br />
+        <asp:TextBox ID="Email" runat="server" /><br />
+        <asp:Label Text="Password" runat="server" /><br />
+        <asp:TextBox ID="Password" runat="server" /><br />
         <asp:Button ID="Registrar" Text="Registrar" OnClick="Registrar_Click" runat="server" />
-    </div>
+    </div>    
     <span id="Mensaje" runat="server"></span>
-    </asp:Content>
+</asp:Content>

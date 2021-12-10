@@ -51,15 +51,6 @@ namespace Ecommerce
         protected global::System.Web.UI.WebControls.TextBox Telefono;
 
         /// <summary>
-        /// Control Correo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Correo;
-
-        /// <summary>
         /// Control Direccion.
         /// </summary>
         /// <remarks>
@@ -69,22 +60,22 @@ namespace Ecommerce
         protected global::System.Web.UI.WebControls.TextBox Direccion;
 
         /// <summary>
-        /// Control Password1.
+        /// Control Email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password1;
+        protected global::System.Web.UI.WebControls.TextBox Email;
 
         /// <summary>
-        /// Control Password2.
+        /// Control Password.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password2;
+        protected global::System.Web.UI.WebControls.TextBox Password;
 
         /// <summary>
         /// Control Registrar.

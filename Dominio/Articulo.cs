@@ -12,9 +12,9 @@ namespace Dominio
         public string codigo { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
-        //public Marca marca { get; set; }
-        //public string descripcionMarca { get; set; }
-        //public Categoria categoria { get; set; }
+        public Marca DMarca { get; set; }
+        //public string marcai { get; set; }
+        public Categoria DCategoria { get; set; }
         //public string descripcionCategoria { get; set; }
         public string Url { get; set; }
         public decimal precio { get; set; }

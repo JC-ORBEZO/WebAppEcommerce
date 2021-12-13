@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Página De Caja</h1>
-    <span id="Contenedor3" runat="server"></span>
+    <span id="contenedor" runat="server"></span>
     <%if (receptor != null)
         {
             foreach (var item in receptor)
@@ -20,5 +20,15 @@
                 <h2>CARRITO VACÍO</h2>
             <%}
             %>
-    <asp:Button Text="Comprar" ID="Comprar" OnClick="Comprar_Click" runat="server" />
+       
+    <%if (detalles!=null) {  foreach (var itea in detalles)
+        {%>
+    <div>
+        <h2>CODIGO DE VENTA: <%=itea.CodigoVenta %></h2>
+        <h2>ID DE ARTICULO: <%= itea.IdArticulo %></h2>
+        <h2>CANTIDAD: <%=itea.Cantidad %></h2>
+        <h2>PRECIO: <%= itea.Precio %></h2>
+    </div>
+            
+        <%} }%>
 </asp:Content>

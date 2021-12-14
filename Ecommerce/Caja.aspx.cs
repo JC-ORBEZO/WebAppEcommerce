@@ -83,13 +83,27 @@ namespace Ecommerce
                 contenedor.InnerText = "USUARIO REGISTRADO";
                 //TRAMITE DE COMPRA
                 VentaNegocio registraVenta = new VentaNegocio();
+                List<Venta> TraerID = new List<Venta>();
                 Venta NuevaVenta = new Venta();
                 NuevaVenta.Dni = Session["usuario"].ToString();
                 NuevaVenta.Precio = EmisorPrecioTotal(detalles);
                 NuevaVenta.TipoDePago = 1;
                 registraVenta.AgregarVenta(NuevaVenta);
+                //TRAER ID VENTA
+                int receptorDeID = 0;
+                TraerID = registraVenta.Listar();
+                foreach (var item in TraerID)
+                {
+                    receptorDeID = item.Codigo;
+                }
                 //TRAMITE DETALLES
-
+                DetalleNegocio ManipularDetalle = new DetalleNegocio();
+                foreach (var item in detalles)
+                {
+                    //DA EL CODIGO DE VENTA A TODOS LOS DETALLES
+                    item.CodigoVenta = receptorDeID;
+                    ManipularDetalle.AgregarDetalle(item);
+                }
             }
         }
 

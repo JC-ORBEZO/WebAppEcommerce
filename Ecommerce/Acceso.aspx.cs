@@ -24,7 +24,7 @@ namespace Ecommerce
             {
                 if (Usuario.Text == item.email && Password.Text == item.password)
                 {
-                    Session.Add("usuario", item.email);
+                    Session.Add("usuario", item.dni);
                     Session.Add("password", item.password);
                     Mensaje.InnerText = "Ingreso correcto";
                     Response.Redirect("Articulos.aspx");

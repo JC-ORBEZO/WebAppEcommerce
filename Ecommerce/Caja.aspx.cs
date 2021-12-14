@@ -21,27 +21,29 @@ namespace Ecommerce
         {
             receptor = (List<Articulo>)Session["carritoCompra"];            
             Session.Add("carritoCompra", receptor);
-            
-            foreach (var item in receptor)
+            if (receptor != null)
             {
-                Detalle extra = new Detalle();
-                
-                if (NoRepetir(item.id) == 1)
+                foreach (var item in receptor)
                 {
-                    extra.CodigoVenta = 5;
-                    extra.IdArticulo = item.id;
-                    extra.Cantidad = 0;
-                    foreach (var itema in receptor)
+                    Detalle extra = new Detalle();
+
+                    if (NoRepetir(item.id) == 1)
                     {
-                        if (extra.IdArticulo == itema.id)
+                        extra.CodigoVenta = 5;
+                        extra.IdArticulo = item.id;
+                        extra.Cantidad = 0;
+                        foreach (var itema in receptor)
                         {
-                            extra.Cantidad++;
+                            if (extra.IdArticulo == itema.id)
+                            {
+                                extra.Cantidad++;
+                            }
                         }
+                        extra.Precio = item.precio;
+                        detalles.Add(extra);
                     }
-                    extra.Precio = item.precio;
-                    detalles.Add(extra);
-                }                
-            }
+                }
+            }           
 
         }  
         
@@ -71,6 +73,35 @@ namespace Ecommerce
 
         protected void Comprar_Click(object sender, EventArgs e)
         {
+            //usuario = Session["usuario"].ToString();
+            if (Session["usuario"] == null)
+            {
+                contenedor.InnerText = "EMPIECE POR REGISTRARSE";
+            }
+            else
+            {
+                contenedor.InnerText = "USUARIO REGISTRADO";
+                //TRAMITE DE COMPRA
+                VentaNegocio registraVenta = new VentaNegocio();
+                Venta NuevaVenta = new Venta();
+                NuevaVenta.Dni = Session["usuario"].ToString();
+                NuevaVenta.Precio = EmisorPrecioTotal(detalles);
+                NuevaVenta.TipoDePago = 1;
+                registraVenta.AgregarVenta(NuevaVenta);
+                //TRAMITE DETALLES
+
+            }
+        }
+
+        // OTORGA PRECIOS TOTALES PARA VENTAS
+        protected decimal EmisorPrecioTotal(List<Detalle> DetaV)
+        {
+            decimal acumu=0;
+            foreach (var item in DetaV)
+            {
+                acumu += (item.Precio * item.Cantidad);
+            }
+            return acumu;
         }
 
     }

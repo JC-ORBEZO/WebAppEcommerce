@@ -20,8 +20,9 @@
                 <h2>CARRITO VACÍO</h2>
             <%}
             %>
-       
-    <%if (detalles!=null) {  foreach (var itea in detalles)
+    <asp:Button Text="COMPRAR" ID="Comprar" OnClick="Comprar_Click" runat="server" />
+    <%if (detalles!=null) {  
+        foreach (var itea in detalles)
         {%>
     <div>
         <h2>CODIGO DE VENTA: <%=itea.CodigoVenta %></h2>

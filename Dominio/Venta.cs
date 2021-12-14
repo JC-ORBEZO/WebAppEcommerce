@@ -8,10 +8,10 @@ namespace Dominio
 {
     public class Venta
     {
-        public int codigo { get; set; }
-        public string dni { get; set; }
-        public DateTime fecha { get; set; }
-        public int tipoDePago { get; set; }
-        public double precio { get; set; }
+        public int Codigo { get; set; }
+        public string Dni { get; set; }
+        public DateTime Fecha { get; set; }
+        public int TipoDePago { get; set; }
+        public decimal Precio { get; set; }
     }
 }

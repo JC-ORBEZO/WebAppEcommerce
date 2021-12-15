@@ -4,21 +4,45 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Ecommerce</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <nav class="navbar navbar-expand-lg navbar-primary bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="Articulos.aspx"><i class="fas fa-store"></i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-link active" href="Articulos.aspx">Artículos <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="Caja.aspx">Carrito</a>
+                    <a class="nav-link" href="Acceso.aspx">Login</a>
+                    <a class="nav-link disabled">Disabled</a>                    
+                </div>
+            </div>
+            <span id="Contenedor4" class="text-warning ml-5" runat="server"></span>
+        </div>
+    </nav>
+    <div class="container">
+        <form id="form1" runat="server">
+        <!--
         <a href="Articulos.aspx">ARTICULOS</a>
         <a href="Caja.aspx">CARRITO</a>
         <a href="Acceso.aspx">LOGIN</a>
-        <span id="Contenedor4" runat="server"></span>
+        -->
+        
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    </div>
+    
 </body>
 </html>

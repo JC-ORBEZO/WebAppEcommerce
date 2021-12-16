@@ -16,7 +16,7 @@
         <%contenedor = item.id; %>        
         <a href="Articulos.aspx?contador=<%=contenedor%>" title="Añadir al carrito" OnClick="AgregarCarrito_Click" class="btn btn-primary">Agregar 1</a>
     </div>    -->
-        <div class="card col" style="width: 18rem;">
+        <div class="card col-auto mr-3 mt-1" style="width: 31%;">
             <img src="<%:item.Url %>" class="card-img-top" alt="Imagen">
             <div class="card-body text-center">
                 <h5 class="card-title"><%:item.nombre %></h5>

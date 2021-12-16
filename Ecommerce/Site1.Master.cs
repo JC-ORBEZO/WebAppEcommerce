@@ -15,7 +15,7 @@ namespace Ecommerce
             // RECEPCIÓN Y MUESTRA DEL NOMBRE DE USUARIO => DESDE LOGIN
             if (Session["usuario"] != null)
             {
-                usuar = Session["usuario"].ToString();
+                usuar = Session["correo"].ToString();
                 if (usuar != null)
                 {
                     Contenedor4.InnerText = "Bienvenido "+usuar;

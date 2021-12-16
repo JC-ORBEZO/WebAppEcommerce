@@ -32,6 +32,7 @@ namespace Ecommerce
                         extra.CodigoVenta = 5;
                         extra.IdArticulo = item.id;
                         extra.Cantidad = 0;
+                        extra.Imagen = item.Url;
                         foreach (var itema in receptor)
                         {
                             if (extra.IdArticulo == itema.id)

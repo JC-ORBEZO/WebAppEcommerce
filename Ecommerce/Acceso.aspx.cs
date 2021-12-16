@@ -26,6 +26,7 @@ namespace Ecommerce
                 {
                     Session.Add("usuario", item.dni);
                     Session.Add("password", item.password);
+                    Session.Add("correo", item.email);
                     Mensaje.InnerText = "Ingreso correcto";
                     Response.Redirect("Articulos.aspx");
                 }

@@ -22,8 +22,7 @@
                 <div class="navbar-nav mx-auto">
                     <a class="nav-link active" href="Articulos.aspx">Artículos <span class="sr-only">(current)</span></a>
                     <a class="nav-link" href="Caja.aspx">Carrito</a>
-                    <a class="nav-link" href="Acceso.aspx">Login</a>
-                    <a class="nav-link disabled">Disabled</a>                    
+                    <a class="nav-link" href="Acceso.aspx">Login</a>                  
                 </div>
             </div>
             <span id="Contenedor4" class="text-warning ml-5" runat="server"></span>

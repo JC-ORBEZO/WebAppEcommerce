@@ -44,22 +44,26 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Codigo</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Precio Unitario</th>
-                <th scope="col"></th>
+                <th scope="col" class="text-center">Codigo</th>
+                <th scope="col" class="text-center">Cantidad</th>
+                <th scope="col" class="text-center">Precio Unitario</th>
+                <th scope="col" class="text-center"></th>
             </tr>
         </thead>
         <tbody>
-            <%int enumerador = 1; if (detalles != null)
+            <%int enumerador = 1; if (receptorDetalles != null)
                 {
-                    foreach (var itema in detalles)
+                    foreach (var itema in receptorDetalles)
                     {%>
             <tr>
                 <th scope="row"><%:enumerador++ %></th>
-                <td><%:itema.IdArticulo %></td>
-                <td><%:itema.Cantidad %></td>
-                <td><%:itema.Precio %></td>
+                <td class="text-center"><%:itema.IdArticulo %></td>
+                <td class="text-center">
+                    <!--<a href="Caja.aspx?cantidad=<%=itema.IdArticulo%>" title="+" class="btn btn-primary">+</a>-->
+                    <%:itema.Cantidad %>
+                    <!--<a href="Caja.aspx?cantidad=<%=itema.IdArticulo%>" title="-" class="btn btn-success">-</a>-->
+                </td>
+                <td class="text-center"><%:itema.Precio %></td>
                 <td>
                     <img src="<%:itema.Imagen %>" alt="Alternate Text" width="40" height="40" /></td>
             </tr>
@@ -67,8 +71,7 @@
             <%}
             }%>
             <asp:Button Text="COMPRAR" ID="Comprar" OnClick="Comprar_Click" class="btn btn-success" runat="server" />
-
-
+             
         </tbody>
     </table>
 </asp:Content>

@@ -11,17 +11,22 @@ namespace Ecommerce
 {
     public partial class Caja : System.Web.UI.Page
     {
+        int receptorCantidad { get; set; }
+        public int varUnive;
         public List<int> AiDis = new List<int>();
         public string usuario;
         public string password;
         public List<Articulo> receptor { get; set; }
         public List<Detalle> detalles = new List<Detalle>();
+        public List<Detalle> receptorDetalles = new List<Detalle>();
         public Venta nuevaVenta = new Venta();
         protected void Page_Load(object sender, EventArgs e)
         {
             receptor = (List<Articulo>)Session["carritoCompra"];            
+            
             Session.Add("carritoCompra", receptor);
-            if (receptor != null)
+            
+            if (receptor != null && Request.QueryString["cantidad"] == null)
             {
                 foreach (var item in receptor)
                 {
@@ -44,10 +49,27 @@ namespace Ecommerce
                         detalles.Add(extra);
                     }
                 }
-            }           
+                Session.Add("detallesCompra", detalles);
+                receptorDetalles = (List<Detalle>)Session["detallesCompra"];
+            }
+            //ARMADO PARA UN FUTURO BUTTON PARA AGREGAR O DISMINUIR PRODUCTOS EN CAJA
+            /*if (Request.QueryString["cantidad"] != null)
+            {
+                receptorCantidad= int.Parse(Request.QueryString["cantidad"].ToString());
+                foreach (var itemare in detalles)
+                {
+                    if (itemare.IdArticulo == receptorCantidad)
+                    {
+                        itemare.Cantidad++;
+                    }
+                }
+                detalles[receptorCantidad - 1].Cantidad++;
+                Session.Add("detallesCompra", detalles);
+                receptorDetalles = (List<Detalle>)Session["detallesCompra"];
+                Response.Redirect("Caja.aspx");
+            }*/
+        }
 
-        }  
-        
         protected int NoRepetir(int id)
         {
             int cont = 0;
@@ -81,7 +103,7 @@ namespace Ecommerce
             }
             else
             {
-                contenedor.InnerText = "USUARIO REGISTRADO";
+                if (receptor !=null) {                 
                 //TRAMITE DE COMPRA
                 VentaNegocio registraVenta = new VentaNegocio();
                 List<Venta> TraerID = new List<Venta>();
@@ -105,6 +127,12 @@ namespace Ecommerce
                     item.CodigoVenta = receptorDeID;
                     ManipularDetalle.AgregarDetalle(item);
                 }
+                    contenedor.InnerText = "COMPRA REALIZADA";
+                }
+                else
+                {
+                    contenedor.InnerText = "CARRITO VACÍO ";
+                }
             }
         }
 
@@ -118,6 +146,14 @@ namespace Ecommerce
             }
             return acumu;
         }
+        
+        protected void Disminuir_Click(object sender, EventArgs e)
+        {
+        }
 
+        protected void Aumentar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
